@@ -4,6 +4,7 @@ import UseEffect from './useEffect';
 import UseContext from './useContext';
 import UseReducer from './useReducer';
 import UseMemo from './useMemo';
+import UseRef from './useRef';
 import UseCallBack from './useCallBack';
 
 function BaseUse(params) {
@@ -14,7 +15,8 @@ function BaseUse(params) {
             {/* <UseContext /> */}
             {/* <UseReducer /> */}
             {/* <UseMemo /> */}
-            <UseCallBack />
+            {/* <UseCallBack /> */}
+            <UseRef />
         </Fragment>
     );
 }

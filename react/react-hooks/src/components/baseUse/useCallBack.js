@@ -21,6 +21,7 @@ const UseCallBack = () => {
     );
 };
 
+// 使用 useCallBack 最好与 memo 一起使用
 const TestButton = memo(({ children, onClick = () => {} }) => {
     console.log(children);
     return (
