@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import UseAsyncTable from '../components/useAsyncTable';
-import columnFunc from '../components/utils/ColumnFunc';
 import axios from 'axios';
+import columnFunc from '../utils/ColumnFunc';
 
 const TestTable = () => {
     const [params, setParams] = useState({});

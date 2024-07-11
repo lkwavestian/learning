@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { List } from 'antd-mobile';
-import { lorem, sleep } from '../components/utils/index.js';
+import { lorem, sleep } from '../utils/index.js';
 import PullToRefresh from '../components/PullToRefresh/index.tsx';
 
 function getNextData() {
