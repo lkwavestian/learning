@@ -2,7 +2,7 @@
 
 import TestInfiniteScroll from '../pages/TestInfiniteScroll.tsx';
 import TestPullToRefresh from '../pages/TestPullToRefresh.tsx';
-import testTable from '../pages/testTable';
+import testTable from '../pages/testTable.tsx';
 
 const routes = [
     {

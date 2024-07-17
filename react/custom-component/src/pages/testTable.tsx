@@ -3,7 +3,7 @@ import UseAsyncTable from '../components/useAsyncTable';
 import axios from 'axios';
 import columnFunc from '../utils/ColumnFunc';
 
-const TestTable = () => {
+const TestTable: React.FC<any> = () => {
     const [params, setParams] = useState({});
     // 查询方法
     const fetchData = () => axios.get('/api/users');

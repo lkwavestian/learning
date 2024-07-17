@@ -1,7 +1,12 @@
 // 生成column函数 xxx模块
+import { ColumnProps } from 'antd/lib/table';
 import React, { Fragment } from 'react';
 
-const operationLog = () => () => [
+export interface IEducationManage {
+  operationLog: () => (updata?: any) => ColumnProps<any>[];
+}
+
+const operationLog = () => (): ColumnProps<any>[] => [
     {
         title: '姓名',
         dataIndex: 'name',
@@ -39,8 +44,8 @@ const operationLog = () => () => [
     },
 ];
 
-const educationManage = {
-    operationLog,
+const educationManage: IEducationManage = {
+  operationLog,
 };
 
 export default educationManage;
