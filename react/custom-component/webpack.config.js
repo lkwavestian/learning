@@ -14,17 +14,32 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     },
-    module: {
-        rules: [
-            {
-                test: /\.less$/i,
-                use: [
-                    // compiles Less to CSS
-                    'style-loader',
-                    'css-loader',
-                    'less-loader',
-                ],
-            },
-        ],
-    },
+    // module: {
+    //     rules: [
+    //         {
+    //             test: lessRegex,
+    //             exclude: lessModuleRegex,
+    //             use: getStyleLoaders(
+    //                 {
+    //                     importLoaders: 2,
+    //                     sourceMap: isEnvProduction && shouldUseSourceMap,
+    //                 },
+    //                 'less-loader'
+    //             ),
+    //             sideEffects: true,
+    //         },
+    //         {
+    //             test: lessModuleRegex,
+    //             use: getStyleLoaders(
+    //                 {
+    //                     importLoaders: 2,
+    //                     sourceMap: isEnvProduction && shouldUseSourceMap,
+    //                     modules: true,
+    //                     getLocalIdent: getCSSModuleLocalIdent,
+    //                 },
+    //                 'less-loader'
+    //             ),
+    //         },
+    //     ],
+    // },
 };
