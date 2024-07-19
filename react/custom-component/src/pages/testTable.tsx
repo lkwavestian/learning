@@ -1,5 +1,7 @@
 import React, { useCallback, useState } from 'react';
-import UseAsyncTable from '../components/useAsyncTable';
+import UseAsyncTable from '../components/useAsyncTable/index.tsx';
+// import useAsyncTable from '../components/useAsyncTable';
+
 import axios from 'axios';
 import columnFunc from '../utils/ColumnFunc';
 

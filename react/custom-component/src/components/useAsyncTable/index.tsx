@@ -2,9 +2,8 @@
 import { Table, Pagination, Row, Col } from 'antd';
 import React, { useEffect, useReducer, useCallback, Fragment, useState } from 'react';
 import { ArgTableProps, paginationInitialType, initialStateType, actionType } from './type';
-import styles from './index.less';
 
-const useAsyncTable: React.FC<ArgTableProps> = (props) => {
+const UseAsyncTable: React.FC<ArgTableProps> = (props) => {
     const { owncolumns, queryAction, params, baseProps, defaultCurrent, noInit = false } = props;
     /* 
         使用useReducer 集中管理组件状态
@@ -127,7 +126,6 @@ const useAsyncTable: React.FC<ArgTableProps> = (props) => {
     return (
         <Fragment>
             <Table
-                className={styles.table_wrap}
                 columns={owncolumns(fetchData)}
                 rowKey={(record: any) => record.id}
                 pagination={false}
@@ -150,4 +148,4 @@ const useAsyncTable: React.FC<ArgTableProps> = (props) => {
         </Fragment>
     );
 };
-export default useAsyncTable;
+export default UseAsyncTable;
