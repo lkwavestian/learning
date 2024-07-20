@@ -4,7 +4,7 @@ import { fileSize, extname } from '../../../utils';
 
 const VALID = {
     exit: ['.jpg', '.jpeg', '.bmp', '.webp', '.gif', '.png'],
-    fileSize: 1024 * 1024,
+    fileSize: 10 * 1024 * 1024,
 };
 
 const DragArea = ({ addFiles, exts, fileSize: fileSizeArg }) => {
@@ -29,13 +29,14 @@ const DragArea = ({ addFiles, exts, fileSize: fileSizeArg }) => {
         let results = await Promise.all(
             [...e.dataTransfer.items].map((item) => handleEntry(item.webkitGetAsEntry()))
         );
-
-        results = results.flat(Infinity).filter((f) => validExt(f.name) && validSize(f.size));
-
-        addFiles(results);
+        results = results.flat(Infinity).filter((f) => {
+            return validExt(f.name) && validSize(f.size);
+        });
+        console.log('results DragArea dropHandler:>> ', results);
+        addFiles(...results);
     };
 
-    const validExt = (name) => VALID.exts.includes(extname(name));
+    const validExt = (name) => VALID.exit.includes(extname(name));
 
     const validSize = (size) => size <= VALID.fileSize;
 
@@ -60,7 +61,7 @@ const DragArea = ({ addFiles, exts, fileSize: fileSizeArg }) => {
             onDragLeave={dragLeaveHandler}
         >
             <p className={styles.section}>
-                <i class="iconfont i-shangchuan"></i>
+                <i className="iconfont i-shangchuan" style={{ fontSize: '2.8rem' }}></i>
                 <span>将目录或多个文件拖拽到此进行扫描</span>
             </p>
             <p className={styles.section}>支持的文件类型：{supports}</p>

@@ -13,6 +13,7 @@ export function useUpload(initFiles = [], exts, maxSize) {
     const addFiles = (...args) => {
         args = args.filter((f) => exts.includes(extname(f.name)) && f.size <= maxSize);
         files.push(...args.map(createNewFile));
+        console.log('files addFiles hooks :>> ', files);
     };
 
     const deleteFiles = (...args) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './index.less';
 import { useUpload } from './hooks';
 import { Button } from 'antd';
@@ -6,18 +6,19 @@ import DragArea from './DragArea';
 import FileTable from './FileTable';
 
 const Upload = () => {
+    console.log('Upload');
     const exts = ['.jpg', '.jpeg', '.bmp', '.webp', '.gif', '.png'];
-    const maxSize = 1024 * 1024;
-    const { files, addFiles, deleteFiles, pendingFiles, upload } = useUpload([], exts, maxSize);
+    const maxSize = 10 * 1024 * 1024;
+
+    let { files, addFiles, deleteFiles, pendingFiles, upload } = useUpload([], exts, maxSize);
+
     const handleFileChange = (e) => {
-        console.log('handleFileChange e:>> ', e);
         addFiles(...e.target.files);
     };
-    console.log('styles :>> ', styles);
     return (
         <div className={styles.container}>
             <DragArea exts={exts} fileSize={maxSize} addFiles={addFiles}></DragArea>
-            <div className="operation">
+            <div className={styles.operation}>
                 <Button type="primary">
                     选择文件
                     <input type="file" multiple onChange={handleFileChange} />
@@ -28,7 +29,7 @@ const Upload = () => {
                 </Button>
             </div>
             <FileTable files={files} deleteFiles={deleteFiles} />
-            <div className="operation">
+            <div className={styles.operation}>
                 <Button disabled={pendingFiles.length === 0} type="primary" onClick={upload}>
                     开始上传
                 </Button>
