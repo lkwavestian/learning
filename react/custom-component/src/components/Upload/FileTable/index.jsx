@@ -30,7 +30,6 @@ const FileTable = ({ files, deleteFiles }) => {
             key: 'status',
             dataIndex: 'status',
             render: (_, record) => {
-                console.log('record :>> ', record);
                 return record.status === 'pending' ? (
                     <Tag color="blue">待上传</Tag>
                 ) : record.status === 'uploaded' ? (
@@ -54,7 +53,7 @@ const FileTable = ({ files, deleteFiles }) => {
             <Table columns={columns} dataSource={files} />
             <div>
                 <Tag>文件数量：{files.length}</Tag>
-                <Tag color="green">{uploadedNumber}}</Tag>
+                <Tag color="green">成功上传：{uploadedNumber}</Tag>
                 <Tag>总大小：{totalSize}</Tag>
             </div>
         </Fragment>

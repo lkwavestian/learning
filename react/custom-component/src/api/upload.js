@@ -1,4 +1,4 @@
-const uploadUrl = 'http://localhost:3000/upload/single';
+const uploadUrl = 'http://localhost:9527/upload/single';
 
 export function upload(file, onProgress, onFinish) {
     const xhr = new XMLHttpRequest();
@@ -7,6 +7,7 @@ export function upload(file, onProgress, onFinish) {
     xhr.onload = function () {
         // 拿到服务器的响应结果
         const resp = JSON.parse(xhr.responseText);
+        console.log('resp :>> ', resp);
         onFinish(resp);
     };
 
