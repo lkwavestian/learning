@@ -1,0 +1,9 @@
+{
+    /* ... your props ... */
+    "ts-node": {
+      "compilerOptions": {
+        "module": "CommonJS"
+      }
+    }
+  }
+  
