@@ -2,7 +2,8 @@
     "dependencies": {
         "antd-mobile": "^5.37.1",
         "eslint": "^9.2.0",
-        "lorem-ipsum": "^2.0.8"
+        "lorem-ipsum": "^2.0.8",
+        "vue-router": "^4.5.1"
     },
     "devDependencies": {
         "commitizen": "^4.3.0",
