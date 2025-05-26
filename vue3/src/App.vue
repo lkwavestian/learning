@@ -1,11 +1,9 @@
 <template>
-    <nav>
-        <router-link to="/refAndReactive">Vue 3 中的 ref 和 reactive：区别与应用场景</router-link>
-    </nav>
+  <main class="flex m-5 gap-5">
+    <RouterView> </RouterView>
+  </main>
 </template>
 
 <script setup></script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
