@@ -3,6 +3,12 @@
     <p>count: {{ count + 1 }}</p>
     <p>person 直接取: {{ person.age + 1 }}</p>
     <p>person 结构出来的: {{ age + 1 }}</p>
+    count input：
+    <input type="text" v-model="count1" />
+    state.count input：
+
+    <input type="text" v-model="state.count" />
+    <p>直接取的: {{ state.count }}</p>
 
     <div>
       shallowRefObj.id input：
@@ -90,7 +96,7 @@
 </template>
 
 <script setup>
-import { toRefs, ref, reactive, shallowRef, shallowReactive, watch } from 'vue';
+import { toRefs, ref, reactive, shallowRef, shallowReactive, watch, toRef } from 'vue';
 
 const count = ref(0);
 
@@ -255,6 +261,10 @@ const changeState8 = () => {
   console.log('点击了changeState8');
   state8.count++;
 };
+
+const words = reactive(['a', 'b', 'c']);
+const wordsRefs = toRefs(words);
+console.log('wordsRefs', wordsRefs);
 </script>
 
 <style lang="scss" scoped></style>
